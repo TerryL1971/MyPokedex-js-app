@@ -23,10 +23,10 @@ let pokemonList = [
 
 for (let list=0; list < pokemonList.length; list++){
   if (pokemonList[list].pokemonHeight > 0.1 && pokemonList[list].pokemonHeight < 1.7){
-    document.write(pokemonList[list].pokemonName + " ", pokemonList[list].pokemonHeight + "   ");
+    document.write(pokemonList[list].pokemonName + ": Height ", pokemonList[list].pokemonHeight + " <p></p>");
 }else if (pokemonList[list].pokemonHeight >= 1.7 && pokemonList[list].pokemonHeight < 2.0){
-    document.write(pokemonList[list].pokemonName + " ", pokemonList[list].pokemonHeight + "   ");
+    document.write(pokemonList[list].pokemonName + ": Height ", pokemonList[list].pokemonHeight + " <p></p>");
   }else {
-    document.write(pokemonList[list].pokemonName + " ", pokemonList[list].pokemonHeight + "  Wow, that is a big Pokemon");
+    document.write(pokemonList[list].pokemonName + ": Height  ", pokemonList[list].pokemonHeight + "  --Wow, that is a big Pokemon!");
   }
 }
