@@ -5,7 +5,7 @@
 
 
   <h1 style="text-align: left;">MyPokedex</h1>
-  <h4 align="left">MyPokedex</h4>
+  <h3 align="left">MyPokedex</h3>
 
 <p style="text-align: left;">
 <p align="left">
