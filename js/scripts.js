@@ -1,4 +1,5 @@
 // This array contains Pokémon data to display in the application.
+let pokemonRepository = (function () {
 let pokemonList = [
     {
          name: "Bulbasaur",
@@ -21,7 +22,7 @@ let pokemonList = [
   ];
  console.log(pokemonList);
 
- pokemonList.forEach(function(pokemon) {
+    pokemonList.forEach(function(pokemon) {
      if (pokemon.height > 0.1 && pokemon.height < 1.7){
          document.write(`${pokemon.name}: Height ${pokemon.height}` + " <p></p>");
          }else if (pokemon.height >= 1.7 && pokemon.height < 2.0){
@@ -29,4 +30,21 @@ let pokemonList = [
          }else {
          document.write(`${pokemon.name}: Height ${pokemon.height}` + "  --Wow, that is a big Pokemon!");
      }
-     });
+ });
+
+function getAll() {
+    return pokemonList;
+}
+
+function add(pokemon) {
+    pokemonList.push(pokemon);
+}
+
+return {
+    getAll: getAll,
+    add: add
+}
+})();
+
+pokemonRepository.getAll();
+document.write(pokemonRepository.getAll);
