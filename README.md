@@ -4,8 +4,8 @@
 <p align="left">
 
 
-  <h3 style="text-align: left;">MyPokedex</h3>
-  <h3 align="left">MyPokedex</h3>
+  <h1 style="text-align: left;">MyPokedex</h1>
+  <h4 align="left">MyPokedex</h4>
 
 <p style="text-align: left;">
 <p align="left">
