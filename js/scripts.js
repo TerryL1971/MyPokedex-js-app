@@ -24,9 +24,9 @@ let pokemonList = [
 
     pokemonList.forEach(function(pokemon) {
      if (pokemon.height > 0.1 && pokemon.height < 1.7){
-         document.write(`${pokemon.name}: Height ${pokemon.height}` + " <p></p>");
+         document.write(`${pokemon.name}: Height ${pokemon.height} <p></p>`);
          }else if (pokemon.height >= 1.7 && pokemon.height < 2.0){
-         document.write(`${pokemon.name}: Height ${pokemon.height}` + " <p></p>");
+         document.write(`${pokemon.name}: Height ${pokemon.height} <p></p>`);
          }else {
          document.write(`${pokemon.name}: Height ${pokemon.height}` + "  --Wow, that is a big Pokemon!");
      }
