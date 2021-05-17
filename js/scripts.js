@@ -46,5 +46,5 @@ return {
 }
 })();
 
+let pokemon = pokemonRepository.getAll();
 pokemonRepository.getAll();
-document.write(pokemonRepository.getAll);
