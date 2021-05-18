@@ -26,7 +26,7 @@ function add(pkemon) {
         typeof pokemon === "object" &&
         "name" in pokemon &&
         "height" in pokemon &&
-        "types" in pookemon
+        "type" in pookemon
     ) {pokemonList.push(pokemon);
     } else {
         console.log("pokemon is not correct");
@@ -47,6 +47,10 @@ function addListItem(pokemon) {
     button.classList.add("button-class");
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
+    button.addEventListener('click', function () {
+        console.log(pokemon.name);
+    });
+
 }
 return {
     add: add,
@@ -58,9 +62,12 @@ return {
 console.log(pokemonRepository.getAll());
 pokemonRepository.add({
     name: "Pikachu",
+    type: ["Electric"],
     height: 0.3,
-    type: "Electric"
+    weight: 6.0
 });
+// let button = document.querySelector('button');
+
 
  pokemonRepository.getAll().forEach(function (pokemon) {
      pokemonRepository.addListItem(pokemon);
