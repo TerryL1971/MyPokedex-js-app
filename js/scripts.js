@@ -59,13 +59,17 @@ return {
 }
 })();
 
-console.log(pokemonRepository.getAll());
+
+
 pokemonRepository.add({
     name: "Pikachu",
     type: ["Electric"],
     height: 0.3,
     weight: 6.0
 });
+
+console.log(pokemonRepository.getAll());
+
 // let button = document.querySelector('button');
 
 
