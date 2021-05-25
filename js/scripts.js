@@ -1,7 +1,8 @@
 let pokemonRepository = (function() {
     let modalContainer = document.querySelector('#modal-container');
+    let imageContainer = document.querySelector('#image-container');
 
-    function showModal(title, text) {
+    function showModal(name, height, type) {
         modalContainer.innerHTML = '';
         let modal = document.createElement('div');
         modal.classList.add('modal');
@@ -12,19 +13,14 @@ let pokemonRepository = (function() {
         closeButtonElement.addEventListener('click', hideModal);
 
         let titleElement = document.createElement('h1');
-        titleElement.innerText = title;
+        titleElement.innerText = name;
 
         let contentElement = document.createElement('p');
-        contentElement.innerText = text;
+        contentElement.innerText = height;
 
-        let imageContainer = document.querySelector('#image-container');
-
-        // Create an <img> element
         let myImage = document.createElement('img');
-
-        // setting `src` property to set the actual element's `src` attribute
-        myImage.src = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-
+        //myImage.src = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+        contentElement.innerHTML = myImage;
 
 
         modal.appendChild(closeButtonElement);
@@ -50,8 +46,8 @@ let pokemonRepository = (function() {
         }
     }
 
-    function showDialog(title, text) {
-        showModal(title, text);
+    function showDialog(pokemon) {
+        showModal(name, height, type);
 
         // We want to add a confirm and cancel button to the modal
         let modal = modalContainer.querySelector('.modal');
@@ -174,7 +170,7 @@ let pokemonRepository = (function() {
 
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function() {
-            console.log(item);
+            showModal(item.name, item.imageUrl, item.height, item.type);
         });
     }
 

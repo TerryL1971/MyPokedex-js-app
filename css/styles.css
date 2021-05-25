@@ -74,6 +74,10 @@ ul {
   margin-bottom: 0;
 }
 
+.modal img {
+  margin-top: 0;
+}
+
 #modal-container {
   display: none;
 }
