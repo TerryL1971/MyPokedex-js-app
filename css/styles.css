@@ -1,88 +1,95 @@
 html,
 body {
-    font-family: Ariel, helvecia,  sans-serif;
+    font-family: Ariel, helvecia, sans-serif;
 }
+
 .button-class {
-  background-color: #4caf50; /* Green */
-  width: 150px;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s;  /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  border: 2px solid #4caf50;
+    background-color: #4caf50;
+    /* Green */
+    width: 150px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #7d1d05;
+    color: #bfc261;
+    border: 2px solid #7d1d05;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 #modal-container {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    padding: 20px;
+    /*  box-sizing: border-box; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  /* to show it above other content */
-  z-index: 999;
+    /* to show it above other content */
+    z-index: 999;
 
-  /* to allow scrolling if the screen is not high enough*/
-  overflow: auto;
+    /* to allow scrolling if the screen is not high enough*/
+    overflow: auto;
 
-  /* this is used to center the modal */
-  display: grid;
-  text-align: center;
+    /* this is used to center the modal */
+    display: inline-flex;
+    text-align: center;
 }
 
 .modal {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: #fff;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  text-align: left;
+    top: auto;
+    left: auto;
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    background: rgba(229, 232, 146, 1);
+    padding: 15px;
+    width: 30%;
+    height: 50%;
+    max-width: 700px;
+    text-align: center;
 }
 
 .modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: #777;
-  text-decoration: underline;
+    float: right;
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    color: #777;
+    text-decoration: underline;
 }
 
 .modal h1 {
-  margin-top: 0;
+    margin-top: 0;
+    text-transform: uppercase;
 }
 
 .modal p {
-  margin-bottom: 0;
-}
-
-.modal img {
-  margin-top: 0;
+    margin-bottom: 0;
+    line-height: 72px;
 }
 
 #modal-container {
-  display: none;
+    display: none;
 }
 
 #modal-container.is-visible {
-  /* CSS for modal container - add your own desired CSS styles here */
-  display: block;
+    /* CSS for modal container - add your own desired CSS styles here */
+    display: block;
 }

@@ -1,8 +1,8 @@
 let pokemonRepository = (function() {
     let modalContainer = document.querySelector('#modal-container');
-    let imageContainer = document.querySelector('#image-container');
 
-    function showModal(name, height) {
+
+    function showModal(pokemon) {
         modalContainer.innerHTML = '';
         let modal = document.createElement('div');
         modal.classList.add('modal');
@@ -13,23 +13,19 @@ let pokemonRepository = (function() {
         closeButtonElement.addEventListener('click', hideModal);
 
         let titleElement = document.createElement('h1');
-        titleElement.innerText = name;
+        titleElement.innerText = pokemon.name;
 
         let contentElement = document.createElement('p');
-        contentElement.innerText = height;
+        contentElement.innerText = pokemon.height;
 
         let myImage = document.createElement('img');
-        myImage.src = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-        contentElement.innerHTML = myImage;
-
+        myImage.src = pokemon.imageUrl
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);
         modal.appendChild(contentElement);
-        imageContainer.appendChild(myImage);
+        modal.appendChild(myImage);
         modalContainer.appendChild(modal);
-
-
 
         modalContainer.classList.add('is-visible');
     }
@@ -46,8 +42,8 @@ let pokemonRepository = (function() {
         }
     }
 
-    function showDialog(pokemon) {
-        showModal(name, height);
+/*    function showDialog(pokemon) {
+        showModal(pokemon);
 
         // We want to add a confirm and cancel button to the modal
         let modal = modalContainer.querySelector('.modal');
@@ -75,7 +71,7 @@ let pokemonRepository = (function() {
             // This can be used to reject from other functions
             dialogPromiseReject = reject;
         });
-    }
+    } */
 
     document.querySelector('#show-modal').addEventListener('click', () => {
         showDialog('Confirm action', 'Are you sure you want to do this?').then(function() {
@@ -170,7 +166,7 @@ let pokemonRepository = (function() {
 
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function() {
-            showModal(item.name, item.height);
+            showModal(item);
         });
     }
 
