@@ -1,8 +1,8 @@
 let pokemonRepository = (function() {
-    //let modalContainer = document.querySelector('#modal-container');
+    let modalContainer = document.querySelector('#modal-container');
 
 
-    /* function showModal(pokemon) {
+    function showModal(pokemon) {
         modalContainer.innerHTML = '';
         let modal = document.createElement('div');
         modal.classList.add('modal');
@@ -12,24 +12,19 @@ let pokemonRepository = (function() {
         closeButtonElement.innerText = 'Close';
         closeButtonElement.addEventListener('click', hideModal);
 
-        // creating title element for pokemon
         let titleElement = document.createElement('h1');
         titleElement.innerText = pokemon.name;
 
-        // creating content element for pokemon
         let contentElement = document.createElement('p');
         contentElement.innerText = pokemon.height;
 
-        // creating image element for pokemon
         let myImage = document.createElement('img');
-        myImageFront.src = pokemon.imageUrlFront,
-        myImageBack.src = pokemon.imageUrlBack
+        myImage.src = pokemon.imageUrl
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);
         modal.appendChild(contentElement);
-        modal.appendChild(myImageFront);
-        modal.appendChild(myImageBack);
+        modal.appendChild(myImage);
         modalContainer.appendChild(modal);
 
         modalContainer.classList.add('is-visible');
@@ -72,13 +67,12 @@ let pokemonRepository = (function() {
 
     document.querySelector('#show-modal').addEventListener('click', () => {
         showModal('Modal title', 'This is the modal content!');
-    }); */
+    });
 
 
 
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-
 
     function add(pokemon) {
         if (
@@ -131,12 +125,9 @@ let pokemonRepository = (function() {
             return response.json();
         }).then(function(details) {
             // Now we add the details to the item
-            item.imageUrlFront = details.sprites.front_default;
-            item.imageUrlBack = details.sprites.back_default;
+            item.imageUrl = details.sprites.front_default;
             item.height = details.height;
-            item.weight = details.weight;
-            //item.types = details.types;
-            //item.abilities = details.ability;
+            item.types = details.types;
         }).catch(function(e) {
             console.error(e);
         });
@@ -146,47 +137,6 @@ let pokemonRepository = (function() {
         pokemonRepository.loadDetails(item).then(function() {
             showModal(item);
         });
-    }
-
-    function showModal(pokemon) {
-      //let modalContainer = $('#modal-container');
-      let modalBody = $('.modal-body');
-      let modalTitle = $('.modal-title');
-      let modalHeader = $('.modal-header');
-      let modalContainer = $("#modal-container");
-      // clear existing content of the modal
-      // modalHeader.empty();
-      modalTitle.empty();
-      modalBody.empty();
-
-      // creating element for name in the modal content
-      let nameElement = $("<h1>" + pokemon.name + "</h1>");
-      // creating img in modal content
-      let myImageFront = $(' <img class="modal-img" style="width:50%"> ');
-      myImageFront.attr("src", pokemon.imageUrlFront);
-      let myImageBack = $('<img class="modal-img" style="width:50%"> ');
-      myImageBack.attr("src", pokemon.imageUrlBack);
-      // creating element for height in modal content
-      let heightElement = $("<p>" + "Height : " +
-      pokemon.height + "</p>");
-      // creating element for weight in modal content
-      let weightElement = $("<p>" + "Weight : " +
-      pokemon.weight + "</p>");
-      // creating element for type in modal content
-    /*  let typesElement = $("<p>" + "Types : " +
-      pokemon.types + "</p>");
-      // creating element for abilities in modal content
-      let abilitiesElement = $("<p>" + "Abilities : " +
-      pokemon.abilities + "</p>"); */
-
-      //modalContainer.append(pokemonModal);
-      modalTitle.append(nameElement);
-      modalBody.append(myImageFront);
-      modalBody.append(myImageBack);
-      modalBody.append(heightElement);
-      modalBody.append(weightElement);
-      //modalBody.append(typesElement);
-      //modalBody.append(abilitiesElement);
     }
 
     return {
