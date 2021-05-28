@@ -1,6 +1,13 @@
 html,
 body {
     font-family: Ariel, helvecia, sans-serif;
+    background-image: url(../img/pokeball.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: black;
+    width: 100%;
+    height: 100%
 }
 
 .button-class {
@@ -22,6 +29,7 @@ body {
     background-color: #7d1d05;
     color: #bfc261;
     border: 2px solid #7d1d05;
+    border-radius: 15px;
 }
 
 ul {
@@ -49,20 +57,6 @@ ul {
 
     /* this is used to center the modal */
     display: inline-flex;
-    text-align: center;
-}
-
-.modal {
-    top: auto;
-    left: auto;
-    margin: auto;
-    display: inline-block;
-    box-sizing: border-box;
-    background: rgba(229, 232, 146, 1);
-    padding: 15px;
-    width: 30%;
-    height: 50%;
-    max-width: 700px;
     text-align: center;
 }
 
