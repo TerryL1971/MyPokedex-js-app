@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script defer src="https://use.fontawesome.com/releases/v5,0,6/js/all.js"></script>
     <title>MyPokedex</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -39,13 +40,18 @@
     </div>
   </div>
 
-
-
     <h1>Pokedex</h1>
     <ul class="pokemon-list"></ul>
     <div id='show-modal'></div>
     <div id='modal-container'></div>
     <div class = "row"></div>
+
+    <div class="search-box">
+      <input class="search-text" name="" placeholder="Which Pokemon">
+      <a class="search-btn" href="https://pokeapi.co/api/v2/pokemon/?limit=150"
+      <i class="fas fa-search"></i>
+    </a>
+    </div>
 
     <strong>
         <script src="js/promise-polyfill.js"></script>
