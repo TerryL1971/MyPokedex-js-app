@@ -5,7 +5,7 @@
 This App loads data from an external API and enables the viewing of data points in detail.
 This App contains Pokemon content right now, but can be used for other content as well.
 
-![Pokemon Showcase](img/pokemon-in-use-app.gif)
+![Pokemon Showcase](img/Pokemon-in-use-app.gif)
 
 
 ## Key Features
