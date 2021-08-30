@@ -1,8 +1,14 @@
 // This array contains Pokémon data to display in the application.
+/**
+* function to add new Pokemons
+*/
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+    /**
+    * this function adds pokemon
+    */
     function add(pokemon) {
         if (
             typeof pokemon === "object" &&
@@ -13,6 +19,10 @@ let pokemonRepository = (function () {
       console.log("pokemon is not correct");
     }
   }
+
+    /**
+    * This function gets all pokemon
+    */
     function getAll() {
     return pokemonList;
   }
@@ -46,6 +56,9 @@ let pokemonRepository = (function () {
     })
   }
 
+    /**
+    * This function loads the details of the Pokemon 
+    */
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
